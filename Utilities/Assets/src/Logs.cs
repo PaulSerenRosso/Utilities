@@ -17,4 +17,10 @@ public static class Logs
     Debug.LogError(log);
   }
   
+  [Conditional("DEBUG")]
+  public static void LogWarning(string log)
+  {
+    Debug.LogWarning(log);
+  }
+  
 }
