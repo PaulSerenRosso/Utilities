@@ -11,4 +11,10 @@ public static class Logs
   {
     Debug.Log(log);
   }
+  [Conditional("DEBUG")]
+  public static void LogError(string log)
+  {
+    Debug.LogError(log);
+  }
+  
 }
