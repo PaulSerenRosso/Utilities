@@ -1,12 +1,12 @@
 {
   "name": "com.pserenrosso.utilities",
   "version": "1.0.0",
-  "displayName": "Utilities",
+  "displayName": "PSR_Utilities",
   "description": "Collection of utility functions to be used in Unity.",
   "unity": "2021.3",
   "author":  "Pserenrosso",
   "keywords": [
-    "Utilities"
+    "PSR_Utilities"
   ],
   "dependencies": {
     "com.unity.addressables": "1.19.19",
