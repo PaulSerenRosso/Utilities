@@ -47,6 +47,14 @@ namespace HelperPSR.Pool
       {
         lastElement =UnityEngine.Object.Instantiate(defaultItem);
       }
+      if (lastElement is GameObject t)
+      {
+        t.SetActive(true);
+      }
+      else if (lastElement is MonoBehaviour mono)
+      {
+        mono.gameObject.SetActive(true);
+      }
       callbackForEachElement?.Invoke(lastElement);
       return lastElement;
     }
