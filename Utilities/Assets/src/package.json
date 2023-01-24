@@ -1,6 +1,6 @@
 {
   "name": "com.pserenrosso.utilities",
-  "version": "0.0.24",
+  "version": "1.0.0",
   "displayName": "Utilities",
   "description": "Collection of utility functions to be used in Unity.",
   "unity": "2021.3",

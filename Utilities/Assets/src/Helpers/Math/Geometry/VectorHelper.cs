@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace HelperPSR.Math.Geometry.Vector
+{
+public static  class VectorHelper 
+{
+    public static Vector3 AddRandXYZ(this Vector3 vector, float rand)
+        {
+            return vector + new Vector3(Random.Range(-rand, rand), Random.Range(-rand, rand), Random.Range(-rand, rand));
+        }
+        
+        public static Vector3 AddRandXZ(this Vector3 vector, float rand)
+        {
+            return vector + new Vector3(Random.Range(-rand, rand), 0, Random.Range(-rand, rand));
+        }
+
+        public static Vector3 AddRandXY(this Vector3 vector, float rand)
+        {
+            return vector + new Vector3(Random.Range(-rand, rand), Random.Range(-rand, rand),0);
+        }
+        
+        public static Vector2 AddRandXY(this Vector2 vector, float rand)
+        {
+            return vector + new Vector2(Random.Range(-rand, rand), Random.Range(-rand, rand));
+        }
+        
+        public static Vector2 AddRandX(this Vector2 vector, float rand)
+        {
+            return vector + new Vector2(Random.Range(-rand, rand), 0);
+        }
+
+        public static Vector2 AddRandY(this Vector2 vector, float rand)
+        {
+            return vector + new Vector2(0, Random.Range(-rand, rand));
+        }
+}
+
+}
