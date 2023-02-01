@@ -108,6 +108,7 @@ namespace ReportRequestEditor
                                    EditorGUILayout.Space(2f);
                                }
                                EditorGUILayout.Space(8f);
+                               /*
                                using (new GUILayout.VerticalScope(EditorStyles.helpBox))
                                {
                                    GUILayout.Label("UI", title);
@@ -115,7 +116,7 @@ namespace ReportRequestEditor
                                if(gridMainPanelCurrentEditor == null)
                             gridMainPanelCurrentEditor = CreateEditor(SO.gridLayoutMainPanel);
                             DrawFoldoutInspector(SO.gridLayoutMainPanel, ref gridMainPanelCurrentEditor);
-                               }
+                               }*/
                                serializedObject.ApplyModifiedProperties();
             }
 
@@ -163,7 +164,7 @@ namespace ReportRequestEditor
           
                try
                {
- serializedObject.Update();
+                   serializedObject.Update();
                   SO = (ReportRequestManager) serializedObject.targetObject;
                            if (SO.reportRequestPanel.activeSelf)
                            {
