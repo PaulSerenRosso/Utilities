@@ -43,6 +43,7 @@ namespace ReportRequest
         public GameObject templateButtonTypeRequest;
         public GameObject buttonTypeRequestPanel;
 
+        public ScrollRect scrollRectForSecondaryPanel;
         #endregion
 
         #region SecondaryPanel
@@ -123,7 +124,7 @@ namespace ReportRequest
             {
                 requireInputFieldList[i].text = String.Empty;
             }
-
+            scrollRectForSecondaryPanel.verticalNormalizedPosition = 0;
             titleRequestPanel.text = typeReportRequestList[index].typeRequestName;
             sendRequestButton.interactable = false;
             subTypeDropDown.options.Clear();
