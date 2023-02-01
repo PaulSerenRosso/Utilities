@@ -38,7 +38,7 @@ namespace ReportRequest
         #region MainPanel
 
         [SerializeField] private GameObject reportRequestMainPanel;
-        public GridLayoutGroup gridLayoutMainPanel;
+        public HorizontalLayoutGroup gridLayoutMainPanel;
         private bool isOpenMainReportRequestPanel;
         public GameObject templateButtonTypeRequest;
         public GameObject buttonTypeRequestPanel;
