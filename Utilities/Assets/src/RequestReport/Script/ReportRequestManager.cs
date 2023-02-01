@@ -124,7 +124,7 @@ namespace ReportRequest
             {
                 requireInputFieldList[i].text = String.Empty;
             }
-            scrollRectForSecondaryPanel.verticalNormalizedPosition = 0;
+            scrollRectForSecondaryPanel.verticalNormalizedPosition = 1;
             titleRequestPanel.text = typeReportRequestList[index].typeRequestName;
             sendRequestButton.interactable = false;
             subTypeDropDown.options.Clear();
