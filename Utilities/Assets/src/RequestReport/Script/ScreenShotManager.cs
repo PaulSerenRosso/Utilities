@@ -26,8 +26,12 @@ public class ScreenShotManager : MonoBehaviour
     {
         reportRequestManager = GetComponent<ReportRequestManager>();
     }
-    
-    public  IEnumerator MakeScreenShot()
+
+    public void StartMakeScreenShot()
+    {
+        StartCoroutine(WaitForMakeScreenShot());
+    }
+    public  IEnumerator WaitForMakeScreenShot()
     {
         if (!reportRequestManager.isOpenReportRequestPanel)
         {

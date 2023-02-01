@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
    {
 
       if(callbackContext.performed)
-      StartCoroutine(screenShotManager.MakeScreenShot());
+      StartCoroutine(screenShotManager.WaitForMakeScreenShot());
     }
     public void InputRequestReport(InputAction.CallbackContext callbackContext)
     {
