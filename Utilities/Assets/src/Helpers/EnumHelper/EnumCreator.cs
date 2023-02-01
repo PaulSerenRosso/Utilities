@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace HelperPSR.Enums
 {
+    /*
     public class EnumCreator : EditorWindow
     {
         private bool currentIsValid;
@@ -66,5 +67,6 @@ namespace HelperPSR.Enums
             }
         }
     }
-#endif
+    */
 }
+#endif
