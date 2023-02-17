@@ -7,9 +7,9 @@ namespace HelperPSR.MonoLoopFunctions
     {
         static private HashSet<I> IMonoLoopFunctions = new();
 
-        private static HashSet<I> toAdded;
+        private static HashSet<I> toAdded = new();
 
-        private static HashSet<I> toRemoved;
+        private static HashSet<I> toRemoved = new();
 
         // Start is called before the first frame update
         static public void Register(I mono)
