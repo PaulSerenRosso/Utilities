@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,11 @@ namespace HelperPSR.MonoLoopFunctions
         private static HashSet<I> toAdded = new();
 
         private static HashSet<I> toRemoved = new();
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
 
         // Start is called before the first frame update
         static public void Register(I mono)
@@ -32,7 +38,7 @@ namespace HelperPSR.MonoLoopFunctions
 
             e.Dispose();
 
-            if (toAdded.Count == 0)
+            if (toAdded.Count != 0)
             {
                 foreach (var element in toAdded)
                 {
@@ -41,7 +47,7 @@ namespace HelperPSR.MonoLoopFunctions
                 toAdded.Clear();
             }
 
-            if (toRemoved.Count == 0)
+            if (toRemoved.Count != 0)
             {
                 foreach (var element in toRemoved)
                 {
