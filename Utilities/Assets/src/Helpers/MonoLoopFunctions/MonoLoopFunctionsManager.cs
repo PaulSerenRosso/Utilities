@@ -7,15 +7,19 @@ namespace HelperPSR.MonoLoopFunctions
     {
         static private HashSet<I> IMonoLoopFunctions = new();
 
+        private static HashSet<I> toAdded;
+
+        private static HashSet<I> toRemoved;
+
         // Start is called before the first frame update
         static public void Register(I mono)
         {
-            IMonoLoopFunctions.Add(mono);
+            toAdded.Add(mono);
         }
 
         static public void UnRegister(I mono)
         {
-            IMonoLoopFunctions.Remove(mono);
+            toRemoved.Add(mono);
         }
 
         public void LaunchLoop()
@@ -25,7 +29,26 @@ namespace HelperPSR.MonoLoopFunctions
             {
                 UpdateElement(e);
             }
+
             e.Dispose();
+
+            if (toAdded.Count == 0)
+            {
+                foreach (var element in toAdded)
+                {
+                    IMonoLoopFunctions.Add(element);
+                }
+                toAdded.Clear();
+            }
+
+            if (toRemoved.Count == 0)
+            {
+                foreach (var element in toRemoved)
+                {
+                    IMonoLoopFunctions.Remove(element);
+                }
+                toRemoved.Clear();
+            }
         }
 
         abstract public void UpdateElement(HashSet<I>.Enumerator e);
