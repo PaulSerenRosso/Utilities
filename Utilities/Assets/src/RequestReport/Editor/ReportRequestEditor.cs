@@ -163,7 +163,7 @@ namespace ReportRequestEditor
           
                try
                {
- serializedObject.Update();
+                   serializedObject.Update();
                   SO = (ReportRequestManager) serializedObject.targetObject;
                            if (SO.reportRequestPanel.activeSelf)
                            {

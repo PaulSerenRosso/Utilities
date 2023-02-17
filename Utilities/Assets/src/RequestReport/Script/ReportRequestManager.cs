@@ -38,11 +38,12 @@ namespace ReportRequest
         #region MainPanel
 
         [SerializeField] private GameObject reportRequestMainPanel;
-        public GridLayoutGroup gridLayoutMainPanel;
+        public HorizontalLayoutGroup gridLayoutMainPanel;
         private bool isOpenMainReportRequestPanel;
         public GameObject templateButtonTypeRequest;
         public GameObject buttonTypeRequestPanel;
 
+        public ScrollRect scrollRectForSecondaryPanel;
         #endregion
 
         #region SecondaryPanel
@@ -123,7 +124,7 @@ namespace ReportRequest
             {
                 requireInputFieldList[i].text = String.Empty;
             }
-
+            scrollRectForSecondaryPanel.verticalNormalizedPosition = 1;
             titleRequestPanel.text = typeReportRequestList[index].typeRequestName;
             sendRequestButton.interactable = false;
             subTypeDropDown.options.Clear();

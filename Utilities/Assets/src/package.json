@@ -11,6 +11,7 @@
   "dependencies": {
     "com.unity.inputsystem" : "1.4.4",
     "com.unity.collections": "1.2.4",
-    "com.jetbrains.riderflow" : "2022.1.5-248"
+    "com.cysharp.unitask" : "2.3.3",
+    "com.unity.addressables": "1.19.19"
   }
 }
