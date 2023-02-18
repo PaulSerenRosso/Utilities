@@ -17,14 +17,14 @@ public class TickTimer
         _tickManager = tickManager;
     }
 
-    public void InitiateTimer()
+    public void Initiate()
     {
         InitiateEvent?.Invoke();
         // _tickManager += TickTimer;
         _timer = Time;
     }
 
-    public void Tick()
+    void Tick()
     {
         _timer -= 1 / _tickManager.GetTickTime;
         if (_timer <= 0)
@@ -34,10 +34,34 @@ public class TickTimer
         }
     }
 
-    public void CancelTimer()
+    public void Cancel()
     {
         _tickManager.TickEvent -= Tick;
         CancelEvent?.Invoke();
     }
+
+    public void ResetCancelEvent()
+    {
+        CancelEvent = null;
+    }
+
+    public void ResetTickEvent()
+    {
+        TickEvent = null;
+    }
+
+    public void ResetInitiateEvent()
+    {
+        InitiateEvent = null;
+    }
+
+    public void ResetEvents()
+    {
+        ResetInitiateEvent();
+        ResetCancelEvent();
+        ResetTickEvent();
+    }
+    
+    
 }
 }
