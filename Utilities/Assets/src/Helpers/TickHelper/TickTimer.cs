@@ -20,7 +20,7 @@ public class TickTimer
     public void Initiate()
     {
         InitiateEvent?.Invoke();
-        // _tickManager += TickTimer;
+         _tickManager.TickEvent += Tick;
         _timer = Time;
     }
 
