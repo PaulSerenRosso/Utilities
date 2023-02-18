@@ -26,7 +26,7 @@ public class TickTimer
 
     void Tick()
     {
-        _timer -= 1 / _tickManager.GetTickTime;
+        _timer -= _tickManager.GetTickTime;
         if (_timer <= 0)
         {
             _tickManager.TickEvent -= Tick;
