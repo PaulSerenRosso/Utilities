@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.Services.Authentication;
@@ -13,11 +14,11 @@ namespace HelperPSR.RemoteConfig
 
         [SerializeField] private bool _isUpdatedRemoteConfigurables;
         private static HashSet<IRemoteConfigurable> _currentRemoteConfigurables = new HashSet<IRemoteConfigurable>();
-        public RemoteConfigValuesLinker Linker
+        public static RemoteConfigValuesLinker Linker
         {
             get => _linker;
         }
-        private RemoteConfigValuesLinker _linker = new RemoteConfigValuesLinker();
+        private static RemoteConfigValuesLinker _linker = new RemoteConfigValuesLinker();
         private struct userAttributes
         {
         }
