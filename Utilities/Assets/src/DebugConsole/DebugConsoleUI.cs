@@ -66,15 +66,7 @@ public class DebugConsoleUI : MonoBehaviour
 
         text.text = myLog; 
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log(lineCount, this);
-        }
-    }
-
+    
     private string DeleteLines(string message, int count)
     {
         return message.Split(Environment.NewLine.ToCharArray(), count + 1).Skip(count).FirstOrDefault();
