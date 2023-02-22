@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HelperPSR.Debug
+namespace HelperPSR.Debugs
 {
 public static class DebugHelper
 {
