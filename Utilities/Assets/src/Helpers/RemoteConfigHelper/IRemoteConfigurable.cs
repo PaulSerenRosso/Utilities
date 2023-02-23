@@ -4,11 +4,9 @@ using UnityEngine;
 
 namespace HelperPSR.RemoteConfigs
 {
-public interface IRemoteConfigurable 
+public interface IRemoteConfigurable
 {
-    public void SetRemoteConfigurableValues()
-    {
-        
-    }
+    public void SetRemoteConfigurableValues();
+
 }
 }
