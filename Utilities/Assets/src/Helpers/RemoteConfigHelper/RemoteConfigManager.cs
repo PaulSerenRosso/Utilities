@@ -7,7 +7,7 @@ using Unity.Services.RemoteConfig;
 using UnityEngine;
 
 
-namespace HelperPSR.RemoteConfig
+namespace HelperPSR.RemoteConfigs
 {
     public class RemoteConfigManager : MonoBehaviour
     {
@@ -18,7 +18,7 @@ namespace HelperPSR.RemoteConfig
         {
             get => _linker;
         }
-        private static RemoteConfigValuesLinker _linker = new RemoteConfigValuesLinker();
+        private static RemoteConfigValuesLinker _linker;
         private struct userAttributes
         {
         }
@@ -32,6 +32,7 @@ namespace HelperPSR.RemoteConfig
         /// </summary>
         private async void Awake()
         {
+            _linker = new RemoteConfigValuesLinker(RemoteConfigService.Instance.appConfig);
             DontDestroyOnLoad(gameObject);
             if (Utilities.CheckForInternetConnection()) await InitializeRemoteConfigAsync();
 

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.RemoteConfig;
 using UnityEngine;
 
-namespace HelperPSR.RemoteConfig
+namespace HelperPSR.RemoteConfigs
 
 {
     // fps
@@ -10,6 +11,11 @@ namespace HelperPSR.RemoteConfig
     // remote config
 public partial class RemoteConfigValuesLinker
 {
+    private RuntimeConfig config;
+    public RemoteConfigValuesLinker(RuntimeConfig remoteConfig)
+    {
+        config = remoteConfig;
+    }
   
 }
 }
