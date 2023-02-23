@@ -9,12 +9,12 @@ namespace HelperPSR.RemoteConfigs
     // fps
     // report de bug 
     // remote config
-public partial class RemoteConfigValuesLinker
+public class RemoteConfigValuesLinker
 {
-    private RuntimeConfig config;
-    public RemoteConfigValuesLinker(RuntimeConfig remoteConfig)
+    protected RuntimeConfig config;
+    public RemoteConfigValuesLinker()
     {
-        config = remoteConfig;
+        config =RemoteConfigService.Instance.appConfig;
     }
   
 }
