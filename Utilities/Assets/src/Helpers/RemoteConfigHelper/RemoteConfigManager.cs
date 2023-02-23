@@ -9,15 +9,15 @@ using UnityEngine;
 
 namespace HelperPSR.RemoteConfigs
 {
-    public class RemoteConfigManager<LINKER> : MonoBehaviour where LINKER : RemoteConfigValuesLinker, new()
+    public class RemoteConfigManager : MonoBehaviour 
     {
         [SerializeField] private bool _isUpdatedRemoteConfigurables;
         private static HashSet<IRemoteConfigurable> _currentRemoteConfigurables = new HashSet<IRemoteConfigurable>();
-        public static LINKER Linker
+        public static RuntimeConfig Config
         {
-            get => _linker;
+            get => _config;
         }
-        private static LINKER _linker;
+        private static RuntimeConfig _config;
         private struct userAttributes
         {
         }
@@ -31,7 +31,7 @@ namespace HelperPSR.RemoteConfigs
         /// </summary>
         private async void Awake()
         {
-            _linker = new LINKER();
+            _config = RemoteConfigService.Instance.appConfig;;
             DontDestroyOnLoad(gameObject);
             if (Utilities.CheckForInternetConnection()) await InitializeRemoteConfigAsync();
 
