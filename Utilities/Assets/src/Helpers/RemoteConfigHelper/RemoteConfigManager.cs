@@ -31,7 +31,7 @@ namespace HelperPSR.RemoteConfigs
         /// </summary>
         private async void Awake()
         {
-            _config = RemoteConfigService.Instance.appConfig;;
+         
             DontDestroyOnLoad(gameObject);
             if (Utilities.CheckForInternetConnection()) await InitializeRemoteConfigAsync();
 
@@ -43,6 +43,7 @@ namespace HelperPSR.RemoteConfigs
         {
             if (configResponse.requestOrigin != ConfigOrigin.Remote) return; 
             if(!_isUpdatedRemoteConfigurables) return;
+            _config = RemoteConfigService.Instance.appConfig;
             foreach (var configurable in _currentRemoteConfigurables)
             {
                 configurable.SetRemoteConfigurableValues();
