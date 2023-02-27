@@ -13,15 +13,15 @@ namespace HelperPSR.Randoms
             {
                 randomMax += probabilities[i];
             }
-
-            int currentElement;
             int rand = Random.Range(0, randomMax);
-            //Debug.Log("rate : " + rate);
             int index = 0;
-            while (rand >= 0)
+            while (true)
             {
-                currentElement = probabilities[index];
                 rand -= probabilities[index];
+                if (rand < 0)
+                {
+                    break;
+                }
                 if (index == probabilities.Length-1)
                 {
                     break;
