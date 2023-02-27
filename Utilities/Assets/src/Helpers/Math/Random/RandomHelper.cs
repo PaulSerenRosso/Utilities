@@ -22,11 +22,11 @@ namespace HelperPSR.Randoms
             {
                 currentElement = probabilities[index];
                 rand -= probabilities[index];
-                index++;
-                if (index == probabilities.Length)
+                if (index == probabilities.Length-1)
                 {
                     break;
                 }
+                index++;
             }
 
             return index;
