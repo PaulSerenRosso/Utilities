@@ -5,9 +5,9 @@ using Random = UnityEngine.Random;
 using System.Linq;
 using System;
 
-namespace HelperPSR.ListArray
+namespace HelperPSR.Collections
 {
-    public static class ListArrayHelper
+    public static class CollectionHelper
     {
         public static void ShuffleArray<T>(this System.Random _rng, T[] _array)
         {
@@ -144,5 +144,14 @@ namespace HelperPSR.ListArray
 
             return returnClass;
         }
+
+        public static void AddOrSet<KEY, VALUE>(ref Dictionary<KEY, VALUE> dictionary, KEY key, VALUE value)
+        {
+            if(!dictionary.TryAdd(key, value))
+            {
+                dictionary[key] = value;
+            }
+        }
+
     }
 }
