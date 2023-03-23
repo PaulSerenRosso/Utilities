@@ -38,23 +38,22 @@ namespace HelperPSR.MonoLoopFunctions
 
             e.Dispose();
 
-            if (toAdded.Count != 0)
-            {
-                foreach (var element in toAdded)
-                {
-                    IMonoLoopFunctions.Add(element);
-                }
-                toAdded.Clear();
-            }
-
-            if (toRemoved.Count != 0)
-            {
-                foreach (var element in toRemoved)
-                {
-                    IMonoLoopFunctions.Remove(element);
-                }
-                toRemoved.Clear();
-            }
+              if (toRemoved.Count != 0)
+              {
+                  foreach (var element in toRemoved)
+                  {
+                      IMonoLoopFunctions.Remove(element);
+                  }
+                  toRemoved.Clear();
+              }
+              if (toAdded.Count != 0)
+              {
+                  foreach (var element in toAdded)
+                  {
+                      IMonoLoopFunctions.Add(element);
+                  }
+                  toAdded.Clear();
+              }
         }
 
         abstract public void UpdateElement(HashSet<I>.Enumerator e);
