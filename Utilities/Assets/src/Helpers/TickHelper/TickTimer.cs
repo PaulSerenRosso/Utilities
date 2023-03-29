@@ -7,6 +7,7 @@ public class TickTimer
     public event Action InitiateEvent;
     public event Action TickEvent;
     public event Action CancelEvent;
+    public event Action UpdateEvent;
     public float Time;
     private float _timer;
     private TickManager _tickManager;
@@ -27,6 +28,7 @@ public class TickTimer
     void Tick()
     {
         _timer -= _tickManager.GetTickTime;
+        UpdateEvent?.Invoke();
         if (_timer <= 0)
         {
             _tickManager.TickEvent -= Tick;
