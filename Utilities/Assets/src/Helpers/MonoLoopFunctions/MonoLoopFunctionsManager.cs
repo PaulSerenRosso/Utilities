@@ -30,14 +30,6 @@ namespace HelperPSR.MonoLoopFunctions
 
         public void LaunchLoop()
         {
-            HashSet<I>.Enumerator e = IMonoLoopFunctions.GetEnumerator();
-            while (e.MoveNext())
-            {
-                UpdateElement(e);
-            }
-
-            e.Dispose();
-
               if (toRemoved.Count != 0)
               {
                   foreach (var element in toRemoved)
@@ -54,6 +46,14 @@ namespace HelperPSR.MonoLoopFunctions
                   }
                   toAdded.Clear();
               }
+            HashSet<I>.Enumerator e = IMonoLoopFunctions.GetEnumerator();
+            while (e.MoveNext())
+            {
+                UpdateElement(e);
+            }
+
+            e.Dispose();
+
         }
 
         abstract public void UpdateElement(HashSet<I>.Enumerator e);
