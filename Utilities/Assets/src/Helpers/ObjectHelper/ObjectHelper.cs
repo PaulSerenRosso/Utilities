@@ -14,7 +14,16 @@ using HelperPSR.Math.Algebra;
         _transform.localScale = newScale;
         _transform.parent = parent;
     }
-
+    
+    public static bool HasParameter(this Animator animator, string paramName)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+        return false;
+    }
     public static void SetGlobalScale(this Transform _transform, Coordinate[] _coordinates)
     {
         Transform parent = _transform.parent;
