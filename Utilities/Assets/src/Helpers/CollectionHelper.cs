@@ -9,7 +9,7 @@ namespace HelperPSR.Collections
 {
     public static class CollectionHelper
     {
-        public static void ShuffleArray<T>(this System.Random _rng, T[] _array)
+        public static void ShuffleArray<T>(ref System.Random _rng, T[] _array)
         {
             int n = _array.Length;
             while (n > 1)
@@ -29,7 +29,7 @@ namespace HelperPSR.Collections
             }
         }
 
-        public static T[] Clone<T>(this T[] array)
+        public static T[] Clone<T>(ref T[] array)
         {
             T[] returnArray = new T[array.Length];
             for (int i = 0; i < array.Length; i++)
