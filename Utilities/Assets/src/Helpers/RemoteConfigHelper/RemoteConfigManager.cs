@@ -5,6 +5,7 @@ using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.RemoteConfig;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 namespace HelperPSR.RemoteConfigs
@@ -26,6 +27,8 @@ namespace HelperPSR.RemoteConfigs
         {
         }
 
+        public UnityEvent OnFirstFetchCompleted;
+
         /// <summary>
         /// Method called before the start of the game
         /// </summary>
@@ -34,10 +37,19 @@ namespace HelperPSR.RemoteConfigs
          
             DontDestroyOnLoad(gameObject);
             if (Utilities.CheckForInternetConnection()) await InitializeRemoteConfigAsync();
-
+            
             RemoteConfigService.Instance.FetchCompleted += UpdateCurrentRemoteConfigurables;
+            RemoteConfigService.Instance.FetchCompleted += RaiseFirstFetchCompletedEvent;
             CallFetch();
         }
+
+        private void RaiseFirstFetchCompletedEvent(ConfigResponse configResponse)
+        {
+            OnFirstFetchCompleted?.Invoke();
+            RemoteConfigService.Instance.FetchCompleted -= RaiseFirstFetchCompletedEvent;
+        }
+        
+        
 
         private void UpdateCurrentRemoteConfigurables(ConfigResponse configResponse)
         {
