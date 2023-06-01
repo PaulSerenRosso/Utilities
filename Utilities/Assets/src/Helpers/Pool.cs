@@ -28,7 +28,7 @@ namespace HelperPSR.Pool
       {
         t.SetActive(false);
       }
-      else if (toAdd is MonoBehaviour mono)
+      else if (toAdd is Behaviour mono)
       {
         mono.gameObject.SetActive(false);
       }
@@ -51,7 +51,7 @@ namespace HelperPSR.Pool
       {
         t.SetActive(true);
       }
-      else if (lastElement is MonoBehaviour mono)
+      else if (lastElement is Behaviour mono)
       {
         mono.gameObject.SetActive(true);
       }
