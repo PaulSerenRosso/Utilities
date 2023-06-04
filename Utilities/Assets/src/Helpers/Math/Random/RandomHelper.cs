@@ -18,7 +18,7 @@ namespace HelperPSR.Randoms
             while (true)
             {
                 rand -= probabilities[index];
-                if (rand < 0)
+                if (rand <= 0)
                 {
                     break;
                 }
